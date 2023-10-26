@@ -4,15 +4,16 @@ use Slim\Http\Response;
 use App\Models\Circuito;
 
 $app->group('/api', function () {
-    $this->get('/circuitos', function ($resquest, $response) {        
+    $this->get('/circuitos', function ($request, $response) {
         $circuitos = Circuito::get();
         return $response->withJson($circuitos);
     });   
-    $this->put('/dispositivo/changePrimeiroAcesso', function ($request, $response) {        
+    $this->put('/changeCircuitos', function ($request, $response) {        
        $dados = $request->getParsedBody();
        $id = $dados['id'];
-        Dispositivo::where('id', $id)->update([
-            'primeiro_acesso' => 'false'
+       $estado = $dados['estado'];
+        Circuito::where('id', $id)->update([
+            'estado' => $estado
         ]);
     }); 
 });

@@ -18,7 +18,7 @@ return [
         'db' =>    [
             'driver'    => 'mysql',
             'host'      => 'localhost',
-            'database'  => 'api_mundosenai',
+            'database'  => 'api-mundosenai',
             'username'  => 'root',
             'password'  => '',
             'charset'   => 'utf8',
